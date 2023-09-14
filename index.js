@@ -32,7 +32,7 @@ app.get('/shayari', async (req, res) => {
     res.json({ shayari });
   } catch (error) {
     console.error('Error:', error.response.data);
-    res.status(500).json({ error: 'Something went wrong' });
+    res.status(500).json({ error});
   }
 });
 
