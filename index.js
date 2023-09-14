@@ -1,14 +1,18 @@
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors'); // Import the cors middleware
 require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors()); // Use the cors middleware to enable CORS
+
 app.get("/",(req,res)=>{
-  res.send("Welcome to homepage of Shyari-Chatgtp Backend")
-})
+  res.send("Welcome to the homepage of Shayari-Chatgpt Backend")
+});
+
 app.get('/shayari', async (req, res) => {
   try {
     const keyword = req.query.keyword;
