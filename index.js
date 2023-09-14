@@ -16,7 +16,7 @@ app.get("/",(req,res)=>{
 app.get('/shayari', async (req, res) => {
   try {
     const keyword = req.query.keyword;
-    const response = await axios.post('https://api.openai.com/v1/engines/davinci-codex/completions', {
+    const response = await axios.post('https://api.openai.com/v1/engines/text-davinci-003/completions', {
       prompt: `Shayari about ${keyword}`,
       max_tokens: 100,
       temperature: 0.7,
